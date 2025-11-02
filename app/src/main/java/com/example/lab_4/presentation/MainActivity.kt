@@ -103,8 +103,17 @@ class MainActivity : ComponentActivity() {
                         stringResource(R.string.send_action_icon_content_description)
                     )
                 }
+                Button(
+                    modifier = Modifier
+                        .weight(0.2f)
+                        .padding(8.dp),
+                    onClick = { viewModel.removeChiuit(chiuit) }
+                ) {
+                    Text("X")
             }
             // TODO 4: Add a new button that has the purpose to delete a chiuit.
+
+            }
         }
     }
 
@@ -140,6 +149,8 @@ class MainActivity : ComponentActivity() {
     private fun setChiuitText(resultText: String?) {
         if(resultText !== null) {
             // TODO 1: Instantiate a new chiuit object then delegate the addition to the [viewModel].
+            viewModel.addChiuit(resultText)
+
         }
     }
 
